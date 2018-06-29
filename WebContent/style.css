@@ -1,0 +1,54 @@
+#navigation img{
+        width:5%;
+        
+}
+
+#center img{
+        width: 100%;
+        
+}
+
+
+#body{
+        
+        background-image: url('images/center.jpg');
+               background-repeat:no-repeat;
+}       
+
+#navigation li a{
+      font-size:2rem;  
+       color:white;
+        border:3px solid white;
+        
+        margin-right:2rem;
+}
+
+#navigation li a:hover{
+	background-color:rgba(0,0,0,1);
+	
+	
+}
+
+#center h1{
+       font-size:650%;  
+       color:white;
+        border:5px solid white;
+       font-family: 'BioRhyme Expanded', serif;
+        
+}
+#loginWindow,#registerWindow{
+        background-color: white;
+        border-radius: 3%;
+        box-shadow: 3px 3px 3px 3px gray;
+        
+}
+td{
+        background-color:white;
+        
+}
+
+tr:hover{
+          box-shadow: 3px 3px 3px 3px gray;
+        
+        
+}
