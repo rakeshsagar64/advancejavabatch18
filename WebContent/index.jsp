@@ -101,14 +101,21 @@
 								<tr>
 								<td>Username</td>
 								<td>
-								<input type="text" name="username">
+								<input type="text" name="username" value="${cusername}">
+								</td>
+								<td>
+								<p style="color:red">${errors['username']}</p>
 								</td>
 								</tr>
 								
 								<tr>
 								<td>Mobile Number</td>
 								<td>
-								<input type="number" name="mobile">
+								<input type="number" name="mobile" value="${cmobile }">
+								</td>
+								<td>
+										<p style="color:red">${errors['mobile']}</p>
+						
 								</td>
 								</tr>
 								
@@ -117,7 +124,11 @@
 								<tr>
 								<td>Enter Email</td>
 								<td>
-								<input type="email" name="emailId">
+								<input type="email" name="emailId" value="${cemail}">
+								</td>
+								<td>
+									<p style="color:red">${errors['email']}</p>
+						
 								</td>
 								</tr>
 								<tr>
@@ -126,6 +137,10 @@
 								</td>
 							<td>
 								<input type="password" name="password">
+								</td>
+								<td>
+										<p style="color:red">${errors['password']}</p>
+						
 								</td>
 							</tr>
 
