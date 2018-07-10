@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.src.service.DbIntr;
 import com.src.service.FactoryClass;
@@ -35,6 +36,7 @@ public class LoginController extends HttpServlet {
 				password=Validate.encryptPassword(password);
 				boolean valid = intr.isValid(username, password);
 				if(valid){
+					HttpSession session=request.getSession();
 					request.getRequestDispatcher("Jobs").forward(request, response);
 					
 				}

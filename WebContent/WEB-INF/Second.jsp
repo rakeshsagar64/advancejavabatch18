@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page session="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +26,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">Welcome, ${username}</a></li>
       <li><a href="index.jsp">Home</a></li>
-       <li><a href="">item 3</a></li>
+       <li><a href="Logout">Logout</a></li>
       <li><a href="">item 4</a></li>
       <li><a href="">item 5</a></li>
     </ul>
@@ -33,16 +35,28 @@
 
   <table class="table">
     <tr>
-      <td>Slno</td>
-      <td>Description</td>
-      <td>Exp</td>
+      <td>JobId</td>
+      <td>Company Name</td>
+      <td>Job Role</td>
+      <td>Experience</td>
+      <td>Salary</td>
+      <td>Work Location</td>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>Developer</td>
-      <td>Java</td>
+    
+    <c:forEach var="temp" items="${sampleList}">
+    	
+    	<tr>
+      <td>${temp.id}</td>
+      <td>${temp.companyName}</td>
+      <td>${temp.role}</td>
+      <td>${temp.expRequired} Years</td>
+      <td>${temp.salary}</td>
+      <td>${temp.workLocation}</td>
     </tr>
-
+    	
+    </c:forEach>
+ 
+     
   </table>
 
 

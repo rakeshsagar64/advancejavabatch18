@@ -7,8 +7,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
+import com.src.model.Job;
 import com.src.model.RegisterModel;
 
 class DbImpl implements DbIntr {
@@ -53,6 +56,29 @@ class DbImpl implements DbIntr {
 		return  set.next();
 		 
 	 }
+	 
+	 
+	 public List<Job> fetchJobs() throws SQLException{
+		 String sql="select * from jobs ";
+		 System.out.println(sql);
+		 PreparedStatement ps = con.prepareStatement(sql);
+		 ResultSet rs = ps.executeQuery();
+		 List<Job> jobList=new ArrayList<>();
+		 while(rs.next()){
+			Job j=new Job();
+			j.setId(rs.getInt(1));
+			j.setCompanyName(rs.getString(2));
+			j.setRole(rs.getString(3));
+			j.setExpRequired(rs.getDouble(4));
+			j.setSalary(rs.getString(5));
+			j.setWorkLocation(rs.getString(6));
+			 jobList.add(j);
+		 }
+		 
+		 return jobList;
+	 }
+	 
+	 
 	 
 	 
 }
